@@ -23,19 +23,19 @@ namespace SanAndreasUnity.Utilities
 
         public static string FilePath
         {
-            get { return Path.Combine(Application.dataPath, Path.Combine("..", FileName)); }
+            get { return Path.Combine(Directory.GetCurrentDirectory(), FileName); }
         }
 
         public static string UserFilePath
         {
-            get { return Path.Combine(Application.dataPath, Path.Combine("..", UserFileName)); }
+            get { return Path.Combine(Directory.GetCurrentDirectory(), UserFileName); }
         }
 
         public static string DataPath
         {
             get { 
 #if UNITY_EDITOR
-                return Path.Combine(Application.dataPath, Path.Combine("..", "Data"));
+                return Path.Combine(Directory.GetCurrentDirectory(), "Data");
 #else
                 return Path.Combine(Application.dataPath, "Data");
 #endif

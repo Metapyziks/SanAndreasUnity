@@ -149,7 +149,7 @@ namespace Facepunch.Networking
 
             _nextTick += Stopwatch.Frequency / UpdateRate;
 
-            Profiler.BeginSample(String.Format("{0}.Update", GetType().Name), this);
+            UnityEngine.Profiling.Profiler.BeginSample(String.Format("{0}.Update", GetType().Name), this);
 
             if (Net != null && !DisableCheckForMessages) {
                 using (_checkForMessages.Sample()) {
@@ -167,7 +167,7 @@ namespace Facepunch.Networking
                 }
             }
 
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
         }
 
         protected virtual void OnUpdate() { }

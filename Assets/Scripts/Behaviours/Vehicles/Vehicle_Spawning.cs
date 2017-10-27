@@ -111,7 +111,9 @@ namespace SanAndreasUnity.Behaviours.Vehicles
             inst.transform.position = spawner.transform.position - Vector3.up * inst.AverageWheelHeight;
             inst.transform.localRotation = spawner.transform.rotation;
 
-            Networking.Server.Instance.GlobalGroup.Add(inst);
+            if (Networking.Server.Instance != null) {
+                Networking.Server.Instance.GlobalGroup.Add(inst);
+            }
 
             return inst;
         }
